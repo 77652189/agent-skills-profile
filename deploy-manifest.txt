@@ -1,0 +1,34 @@
+# 默认部署清单 —— scripts/install.ps1 和 scripts/install.sh 读这份文件
+#
+# 每行一个 skill 名，用的是扁平名字（不带 matt-pocock/ 前缀）。脚本会先在
+# skills/<name> 找，找不到再去 skills/matt-pocock/<name> 找。
+# `#` 开头的行和空行都会被忽略。
+#
+# 改动这份清单 = 改动"装不装"这个决定本身：新增一行就是下次同步时多装一个，
+# 删一行/注释掉一行，下次同步会把对应的本地链接也拆掉（不动仓库里的源文件）。
+
+# 工作流程
+clarify
+review-fix-loop
+zoom-out
+
+# 文档与代码理解
+canon
+codebase-memory
+
+# 界面与产物
+redesign-skill
+streamlit-feature-change
+officecli
+
+# Matt Pocock 系（源文件在 skills/matt-pocock/，本地按扁平名挂）
+tdd
+diagnose
+improve-codebase-architecture
+codebase-design
+grilling
+domain-modeling
+
+# 故意不装：paper-daily-brief —— 面向每日文献扫描需求，不是当前使用者的日常工作流。
+# 需要时把下面这行取消注释，重新跑一次 install 脚本即可。
+# paper-daily-brief

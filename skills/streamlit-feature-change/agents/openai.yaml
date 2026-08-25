@@ -1,0 +1,4 @@
+interface:
+  display_name: "Streamlit Feature Change"
+  short_description: "Guide Streamlit page wiring changes."
+  default_prompt: "Use $streamlit-feature-change when adding, removing, renaming, or refactoring Streamlit pages or features."

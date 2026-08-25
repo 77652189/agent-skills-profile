@@ -1,0 +1,71 @@
+# 模板：从本机实际配置导出，检索词与主题为调好的值，凭证类字段已清空。
+# 用法：复制为 config.toml 后填 contact_email；API key 走 *_api_key_env 指定的环境变量。
+# config.toml 本身被 .gitignore 排除，不要提交。
+
+[brief]
+query = "(Pichia pastoris OR Komagataella phaffii) AND (secretion OR recombinant protein OR promoter OR signal peptide)"
+lookback_days = 14
+max_items = 20
+language = "zh-CN"
+translate_abstracts = true
+use_y103 = true
+required_keywords_any = ["pichia pastoris", "komagataella phaffii", "k. phaffii"]
+
+[runtime]
+timeout_seconds = 30
+max_retries = 2
+max_workers = 6
+contact_email = ""
+
+[sources.pubmed]
+enabled = true
+api_key_env = "NCBI_API_KEY"
+api_key = ""
+max_results = 20
+
+[sources.europe_pmc]
+enabled = true
+max_results = 20
+
+[sources.openalex]
+enabled = true
+api_key_env = "OPENALEX_API_KEY"
+api_key = ""
+max_results = 20
+
+[sources.biorxiv]
+enabled = true
+max_results = 20
+max_pages = 3
+
+[sources.medrxiv]
+enabled = true
+max_results = 20
+max_pages = 3
+
+[sources.crossref]
+enabled = true
+api_key_env = "CROSSREF_API_KEY"
+api_key = ""
+max_results = 20
+
+[[topics]]
+id = "custom-pichia-secretion"
+name = "毕赤酵母重组蛋白分泌"
+query = "(Pichia pastoris OR Komagataella phaffii) AND (secretion OR recombinant protein)"
+keywords = ["pichia pastoris", "komagataella phaffii", "recombinant protein", "secretion", "secretory pathway"]
+exclude_keywords = ["human clinical trial"]
+
+[[topics]]
+id = "custom-pichia-promoter"
+name = "毕赤酵母启动子与表达调控"
+query = "(Pichia pastoris OR Komagataella phaffii) AND (promoter OR transcriptional regulation)"
+keywords = ["pichia pastoris", "komagataella phaffii", "promoter", "transcriptional regulation", "aox1", "gap promoter"]
+exclude_keywords = []
+
+[[topics]]
+id = "custom-signal-peptide"
+name = "分泌信号肽优化"
+query = "signal peptide AND (Pichia pastoris OR Komagataella phaffii)"
+keywords = ["signal peptide", "secretion leader", "alpha mating factor", "α-mating factor"]
+exclude_keywords = []

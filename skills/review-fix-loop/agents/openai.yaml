@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Fix Loop"
+  short_description: "Review, fix, verify, and re-review code changes."
+  default_prompt: "Use $review-fix-loop to review the current changes, fix clear issues, run focused verification, and re-review until no serious issues remain."

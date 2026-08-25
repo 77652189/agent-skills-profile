@@ -1,0 +1,23 @@
+# Local/editor noise
+.DS_Store
+Thumbs.db
+*.log
+
+# Never store credentials or machine-local Codex state
+auth.json
+config.toml
+hooks.json
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+sessions/
+logs/
+cache/
+tmp/
+
+# Nested repositories copied from local skills
+**/.git/
+
+# Personal session-memory archive lives in a separate private repo
+# (https://github.com/77652189/codex-memories) — this repo is public, keep it out
+memories/
